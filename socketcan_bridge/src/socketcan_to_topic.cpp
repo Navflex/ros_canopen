@@ -102,7 +102,7 @@ namespace socketcan_bridge
         {
           // can::tostring cannot be used for dlc > 8 frames. It causes an crash
           // due to usage of boost::array for the data array. The should always work.
-          ROS_WARN("Received frame is error: %s", can::tostring(f, true).c_str());
+          ROS_WARN_THROTTLE(10, "Received frame is error: %s", can::tostring(f, true).c_str());
         }
       }
 
